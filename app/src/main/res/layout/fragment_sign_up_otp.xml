@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+        <View
+            android:layout_width="match_parent"
+            android:background="@drawable/gradient_registration_background"
+            android:layout_height="match_parent"/>
+
+        <FrameLayout
+            android:id="@+id/fl_onboard_tutorial"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></FrameLayout>
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:id="@+id/fl_pick_contry"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginEnd="40dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_weight="1">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:alpha="0.5"
+                                android:background="#ffffff"></View>
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/ipt_pick_contry"
+                                android:enabled="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                android:hint="@string/pick_your_contry"/>
+
+                            <ImageView
+                                android:id="@+id/iv_drop_down"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end|center"
+                                android:layout_marginRight="8dp"
+                                android:src="@drawable/ic_arrow_drop_down" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:id="@+id/fl_enter_phone_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginEnd="40dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_weight="1">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:alpha="0.5"
+                                android:background="#ffffff"></View>
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/ipt_enter_phone_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                android:inputType="phone"
+                                android:hint="@string/enter_your_phone_number"/>
+
+                            <ImageView
+                                android:id="@+id/iv_phone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end|center"
+                                android:layout_marginRight="8dp"
+                                android:src="@drawable/ic_phone_android" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginEnd="40dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/send_sms_notice"
+                                android:textAlignment="center"
+                                android:textColor="#4d4d4d"
+                                android:textSize="18sp" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:id="@+id/fl_send_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginEnd="64dp"
+                            android:layout_marginStart="64dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_weight="1">
+
+                            <View
+                                android:id="@+id/v_send_code"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/border_around" />
+
+                            <TextView
+                                android:id="@+id/tv_send_code"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/next"
+                                android:textAlignment="center"
+                                android:textColor="#ff3e3e"
+                                android:textSize="40sp" />
+                        </FrameLayout>
+
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>
