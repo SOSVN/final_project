@@ -1,1 +1,1 @@
-include ':app', ':card-slider', ':paper-onboarding'
+include ':app', ':card-slider'

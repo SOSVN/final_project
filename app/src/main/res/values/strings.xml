@@ -6,6 +6,9 @@
 
     <string name="action_settings">Settings</string>
 
+    <string name="button.finish">FINISH</string>
+    <string name="button.next">NEXT</string>
+    <string name="button.skip">SKIP</string>
     <string name="text1">The museum is housed in the Louvre Palace, originally built as a fortress in the late 12th century…</string>
     <string name="text2">Gwanghwamun is the main and largest gate of Gyeongbokgung Palace, in Jongno-gu, Seoul, South Korea.</string>
     <string name="text3">Tower Bridge is a combined bascule and suspension bridge in London built in 1886–1894.</string>
@@ -43,6 +46,12 @@
     <string name="bleed">Bleed</string>
     <string name="fracture">Fracture</string>
     <string name="cancel">Cancel</string>
+    <string name="find_title">Find</string>
+    <string name="call_title">Call</string>
+    <string name="report_title">Report</string>
+    <string name="find_mess">We will suggest the nearest quality hospital in the area.</string>
+    <string name="call_mess">Directly contacts with the english-speaking emergency line.</string>
+    <string name="report_mess">Generate a bilingual report to pass the language barrier on the street.</string>
 
     <string-array name="gender_array">       
         <item>Male</item>               

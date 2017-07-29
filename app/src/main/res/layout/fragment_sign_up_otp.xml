@@ -4,21 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/gradient_registration_background" />
-
-        <FrameLayout
-            android:id="@+id/fl_onboard_tutorial"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></FrameLayout>
-    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
