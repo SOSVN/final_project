@@ -7,21 +7,24 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2">
+        android:layout_weight="1.5">
+
         <View
             android:layout_width="match_parent"
-            android:background="@drawable/gradient_registration_background"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_registration_background" />
 
         <FrameLayout
             android:id="@+id/fl_onboard_tutorial"
             android:layout_width="match_parent"
             android:layout_height="match_parent"></FrameLayout>
     </FrameLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3">
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -60,11 +63,11 @@
 
                             <android.support.design.widget.TextInputEditText
                                 android:id="@+id/ipt_pick_contry"
-                                android:enabled="false"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_margin="8dp"
-                                android:hint="@string/pick_your_contry"/>
+                                android:enabled="true"
+                                android:hint="@string/pick_your_contry" />
 
                             <ImageView
                                 android:id="@+id/iv_drop_down"
@@ -96,8 +99,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_margin="8dp"
-                                android:inputType="phone"
-                                android:hint="@string/enter_your_phone_number"/>
+                                android:hint="@string/enter_your_phone_number"
+                                android:inputType="phone" />
 
                             <ImageView
                                 android:id="@+id/iv_phone"
@@ -134,23 +137,27 @@
                             android:layout_marginEnd="64dp"
                             android:layout_marginStart="64dp"
                             android:layout_marginTop="4dp"
-                            android:layout_weight="1">
+                            android:layout_weight="1.25">
 
-                            <View
-                                android:id="@+id/v_send_code"
+                            <FrameLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/border_around" />
+                                android:layout_height="75dp">
+                                <View
+                                    android:id="@+id/v_send_code"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/border_around" />
 
-                            <TextView
-                                android:id="@+id/tv_send_code"
-                                android:layout_marginTop="4dp"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/next"
-                                android:textAlignment="center"
-                                android:textColor="#ff3e3e"
-                                android:textSize="40sp" />
+                                <TextView
+                                    android:id="@+id/tv_send_code"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/next"
+                                    android:textAlignment="center"
+                                    android:textColor="#ff3e3e"
+                                    android:textSize="40sp" />
+                            </FrameLayout>
                         </FrameLayout>
 
                     </LinearLayout>

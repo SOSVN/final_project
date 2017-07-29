@@ -15,12 +15,15 @@ import butterknife.OnClick;
 
 public class ReportSeverityFragment extends Fragment {
 
-    private final int HIGH = 0;
-    private final int MEDIUM = 1;
-    private final int SLIGHT = 2;
-    private final int NORMAL = 3;
+    private final int HIGH = R.color.severity_high_highlighted;
+    private final int MEDIUM = R.color.severity_medium_highlighted;
+    private final int SLIGHT = R.color.severity_slight_highlighted;
+    private final int NORMAL = R.color.severity_normal_highlighted;
+    private final int HIGHLIGHT_IDLE = R.color.idle;
+    private final int TEXT_IDLE = R.color.text_idle;
+    private final int TEXT_HIGHLIGHTED = R.color.text_highlighted;
 
-    private int userSelected = -1;
+    private static String userSelected = "";
 
     @BindView(R.id.v_high_severity)
     View vHighSeverity;
@@ -34,10 +37,6 @@ public class ReportSeverityFragment extends Fragment {
     View vSlightSeverity;
     @BindView(R.id.tv_slight_severity)
     TextView tvSlightSeverity;
-    @BindView(R.id.v_normal_severity)
-    View vNormalSeverity;
-    @BindView(R.id.tv_normal_severity)
-    TextView tvNormalSeverity;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,42 +52,47 @@ public class ReportSeverityFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+        //set default value for user
+        setHighlight(vSlightSeverity, tvSlightSeverity, getResources().getColor(SLIGHT));
+        userSelected = getResources().getString(R.string.slight);
 
     }
 
-    @OnClick({R.id.v_high_severity, R.id.v_medium_severity, R.id.v_slight_severity, R.id.v_normal_severity})
+    @OnClick({R.id.v_high_severity, R.id.v_medium_severity, R.id.v_slight_severity})
     public void setUpHighlight(View view) {
         resetHighlight();
         switch (view.getId()) {
             case R.id.v_high_severity:
-                setHighlight(vHighSeverity, tvHighSeverity, getResources().getColor(R.color.severity_high_highlighted));
+                setHighlight(vHighSeverity, tvHighSeverity, getResources().getColor(HIGH));
+                userSelected = getResources().getString(R.string.high);
                 break;
             case R.id.v_medium_severity:
-                setHighlight(vMediumSeverity, tvMediumSeverity, getResources().getColor(R.color.severity_medium_highlighted));
+                setHighlight(vMediumSeverity, tvMediumSeverity, getResources().getColor(MEDIUM));
+                userSelected = getResources().getString(R.string.medium);
                 break;
             case R.id.v_slight_severity:
-                setHighlight(vSlightSeverity, tvSlightSeverity, getResources().getColor(R.color.severity_slight_highlighted));
-                break;
-            case R.id.v_normal_severity:
-                setHighlight(vNormalSeverity, tvNormalSeverity, getResources().getColor(R.color.severity_normal_highlighted));
+                setHighlight(vSlightSeverity, tvSlightSeverity, getResources().getColor(SLIGHT));
+                userSelected = getResources().getString(R.string.slight);
                 break;
         }
     }
 
     public void resetHighlight() {
-        vHighSeverity.setBackgroundColor(getResources().getColor(R.color.idle));
-        vMediumSeverity.setBackgroundColor(getResources().getColor(R.color.idle));
-        vSlightSeverity.setBackgroundColor(getResources().getColor(R.color.idle));
-        vNormalSeverity.setBackgroundColor(getResources().getColor(R.color.idle));
+        vHighSeverity.setBackgroundColor(getResources().getColor(HIGHLIGHT_IDLE));
+        vMediumSeverity.setBackgroundColor(getResources().getColor(HIGHLIGHT_IDLE));
+        vSlightSeverity.setBackgroundColor(getResources().getColor(HIGHLIGHT_IDLE));
 
-        tvHighSeverity.setTextColor(getResources().getColor(R.color.text_idle));
-        tvMediumSeverity.setTextColor(getResources().getColor(R.color.text_idle));
-        tvSlightSeverity.setTextColor(getResources().getColor(R.color.text_idle));
-        tvNormalSeverity.setTextColor(getResources().getColor(R.color.text_idle));
+        tvHighSeverity.setTextColor(getResources().getColor(TEXT_IDLE));
+        tvMediumSeverity.setTextColor(getResources().getColor(TEXT_IDLE));
+        tvSlightSeverity.setTextColor(getResources().getColor(TEXT_IDLE));
     }
 
     public void setHighlight(View view, TextView textView, int bgColor) {
         view.setBackgroundColor(bgColor);
-        textView.setTextColor(getResources().getColor(R.color.text_highlighted));
+        textView.setTextColor(getResources().getColor(TEXT_HIGHLIGHTED));
+    }
+
+    public static String getUserSelected() {
+        return userSelected;
     }
 }

@@ -13,7 +13,17 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static android.R.attr.value;
+
 public class ReportWhatIsHappenedFragment extends Fragment {
+
+    private final int BURN = R.color.burn;
+    private final int FRACTURE = R.color.fracture;
+    private final int BLEED = R.color.bleed;
+
+    private final int HIGHLIGHT_IDLE = R.color.idle;
+    private final int TEXT_IDLE = R.color.text_idle;
+    private final int TEXT_HIGHLIGHTED = R.color.text_highlighted;
 
     @BindView(R.id.v_burn)
     View vBurn;
@@ -27,6 +37,8 @@ public class ReportWhatIsHappenedFragment extends Fragment {
     View vBleed;
     @BindView(R.id.tv_bleed)
     TextView tvBleed;
+
+    private static String userSelected = "";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,7 +54,9 @@ public class ReportWhatIsHappenedFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-
+        //set default value for user
+        setHighlight(vBleed, tvBleed, getResources().getColor(BLEED));
+        userSelected = getResources().getString(R.string.bleed);
     }
 
     @OnClick({R.id.v_fracture, R.id.v_bleed, R.id.v_burn})
@@ -50,29 +64,36 @@ public class ReportWhatIsHappenedFragment extends Fragment {
         resetHighlight();
         switch (view.getId()) {
             case R.id.v_burn:
-                setHighlight(vBurn, tvBurn, getResources().getColor(R.color.burn));
+                setHighlight(vBurn, tvBurn, getResources().getColor(BURN));
+                userSelected = getResources().getString(R.string.burn);
                 break;
             case R.id.v_fracture:
-                setHighlight(vFracture, tvFracture, getResources().getColor(R.color.fracture));
+                setHighlight(vFracture, tvFracture, getResources().getColor(FRACTURE));
+                userSelected = getResources().getString(R.string.fracture);
                 break;
             case R.id.v_bleed:
-                setHighlight(vBleed, tvBleed, getResources().getColor(R.color.bleed));
+                setHighlight(vBleed, tvBleed, getResources().getColor(BLEED));
+                userSelected = getResources().getString(R.string.bleed);
                 break;
         }
     }
 
     public void resetHighlight() {
-        vBurn.setBackgroundColor(getResources().getColor(R.color.idle));
-        vFracture.setBackgroundColor(getResources().getColor(R.color.idle));
-        vBleed.setBackgroundColor(getResources().getColor(R.color.idle));
+        vBurn.setBackgroundColor(getResources().getColor(HIGHLIGHT_IDLE));
+        vFracture.setBackgroundColor(getResources().getColor(HIGHLIGHT_IDLE));
+        vBleed.setBackgroundColor(getResources().getColor(HIGHLIGHT_IDLE));
 
-        tvBurn.setTextColor(getResources().getColor(R.color.text_idle));
-        tvFracture.setTextColor(getResources().getColor(R.color.text_idle));
-        tvBleed.setTextColor(getResources().getColor(R.color.text_idle));
+        tvBurn.setTextColor(getResources().getColor(TEXT_IDLE));
+        tvFracture.setTextColor(getResources().getColor(TEXT_IDLE));
+        tvBleed.setTextColor(getResources().getColor(TEXT_IDLE));
     }
 
     public void setHighlight(View view, TextView textView, int bgColor) {
         view.setBackgroundColor(bgColor);
-        textView.setTextColor(getResources().getColor(R.color.text_highlighted));
+        textView.setTextColor(getResources().getColor(TEXT_HIGHLIGHTED));
+    }
+
+    public static String getUserSelected() {
+        return userSelected;
     }
 }

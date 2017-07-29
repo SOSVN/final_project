@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.coderschool.sosvn.fragment.ReportSeverityFragment;
+import com.coderschool.sosvn.fragment.ReportSumaryFragment;
 import com.coderschool.sosvn.fragment.ReportWhatIsHappenedFragment;
 import com.coderschool.sosvn.fragment.ReportWhereItIsFragment;
 
@@ -43,6 +44,11 @@ public class ReportPagerAdapter extends FragmentStatePagerAdapter {
                 ReportWhereItIsFragment tab3 = new ReportWhereItIsFragment();
 //                tab2.setArguments(bundle);
                 return tab3;
+            case 3:
+                // set Fragmentclass Arguments
+                ReportSumaryFragment tab4 = new ReportSumaryFragment();
+//                tab2.setArguments(bundle);
+                return tab4;
             default:
                 return null;
         }
@@ -64,4 +70,5 @@ public class ReportPagerAdapter extends FragmentStatePagerAdapter {
 //                ViewGroup.LayoutParams.MATCH_PARENT);
 //        return textView;
 //    }
+
 }

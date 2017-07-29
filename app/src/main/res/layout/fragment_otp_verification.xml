@@ -11,7 +11,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/gradient_verification_background" />
+            android:background="@color/colorPrimary" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,7 +61,7 @@
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.25" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -144,12 +144,51 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp" />
                     </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:alpha="0.5"
+                            android:background="#ffffff" />
+
+                        <TextView
+                            android:id="@+id/tv_fifth_code"
+                            style="@style/NumberCodeText"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <View
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:alpha="0.5"
+                            android:background="#ffffff" />
+
+                        <TextView
+                            android:id="@+id/tv_sixth_code"
+                            style="@style/NumberCodeText"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp" />
+                    </FrameLayout>
+
                 </LinearLayout>
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.25" />
             </LinearLayout>
 
             <LinearLayout
@@ -158,11 +197,6 @@
                 android:layout_weight="4"
                 android:orientation="vertical">
 
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"></FrameLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -400,24 +434,30 @@
                 android:layout_marginEnd="64dp"
                 android:layout_marginStart="64dp"
                 android:layout_marginTop="16dp"
-                android:layout_weight="1">
+                android:layout_weight="1.5">
 
-                <View
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_marginEnd="32dp"
-                    android:layout_marginStart="32dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/border_around_submit" />
+                    android:layout_height="75dp">
 
-                <TextView
-                    android:id="@+id/tv_submit_text"
-                    android:layout_marginTop="12dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/resend"
-                    android:textAlignment="center"
-                    android:textColor="#ffffff"
-                    android:textSize="32sp" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border_around_submit" />
+
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:id="@+id/tv_submit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/resend"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="32sp" />
+
+                </FrameLayout>
             </FrameLayout>
         </LinearLayout>
     </FrameLayout>

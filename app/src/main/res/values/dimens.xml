@@ -9,6 +9,6 @@
     <dimen name="left_offset">61dp</dimen>
     <dimen name="card_width">148dp</dimen>
     <dimen name="card_corner_radius">10dp</dimen>
-    <dimen name="text_report_size">20sp</dimen>
-    <dimen name="title_report_size">30sp</dimen>
+    <dimen name="text_report_size">16sp</dimen>
+    <dimen name="title_report_size">26sp</dimen>
 </resources>

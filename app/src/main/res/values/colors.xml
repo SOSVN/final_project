@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ff0844</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#F44336</color>
+    <color name="colorPrimaryDark">#F44336</color>
+    <color name="colorAccent">#F44336</color>
 
     <color name="rating_background">#ff0022</color>
     <color name="rating_text">@android:color/white</color>
@@ -20,5 +20,6 @@
 
     <color name="text_idle">#6e6b6b</color>
     <color name="text_highlighted">#ffffff</color>
-
+    <color name="divider" >#d9d7d7</color>
+    <color name="color_title">#2880fa</color>
 </resources>

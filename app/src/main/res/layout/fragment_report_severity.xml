@@ -7,7 +7,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="0.5">
 
         <TextView
             android:layout_width="wrap_content"
@@ -108,34 +108,6 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@string/slight"
-                android:textColor="#6e6b6b"
-                android:textSize="@dimen/text_report_size" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <com.coderschool.sosvn.util.ViewCustom
-                corner_radius="50.0"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="8dp">
-
-                <View
-                    android:id="@+id/v_normal_severity"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:alpha="0.6"
-                    android:background="@color/idle" />
-            </com.coderschool.sosvn.util.ViewCustom>
-            <TextView
-                android:id="@+id/tv_normal_severity"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/normal"
                 android:textColor="#6e6b6b"
                 android:textSize="@dimen/text_report_size" />
         </FrameLayout>
