@@ -74,6 +74,7 @@
                     android:alpha="0.6"
                     android:background="@color/idle" />
             </com.coderschool.sosvn.util.ViewCustom>
+
             <TextView
                 android:id="@+id/tv_medium_severity"
                 android:layout_width="match_parent"
@@ -102,6 +103,7 @@
                     android:alpha="0.6"
                     android:background="@color/idle" />
             </com.coderschool.sosvn.util.ViewCustom>
+
             <TextView
                 android:id="@+id/tv_slight_severity"
                 android:layout_width="match_parent"

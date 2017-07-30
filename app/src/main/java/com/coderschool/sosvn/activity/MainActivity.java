@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.coderschool.sosvn.R;
 import com.coderschool.sosvn.fragment.MainScreenFragment;
-import com.coderschool.sosvn.fragment.SignUpOTPFragment;
 
 import butterknife.ButterKnife;
 

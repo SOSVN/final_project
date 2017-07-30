@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
-public class TextViewFactory implements  ViewSwitcher.ViewFactory {
+public class TextViewFactory implements ViewSwitcher.ViewFactory {
 
     @StyleRes
     final int styleId;

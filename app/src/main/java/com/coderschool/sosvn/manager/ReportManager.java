@@ -14,7 +14,7 @@ public class ReportManager {
     }
 
     private ReportManager() {
-        if(report == null)
+        if (report == null)
             report = new Report();
     }
 
@@ -25,6 +25,7 @@ public class ReportManager {
     public void setReport(Report report) {
         this.report = report;
     }
+
     public void setReport(String severity, String what, Bitmap where) {
         ourInstance.report.setSeverity(severity);
         ourInstance.report.setWhat(what);

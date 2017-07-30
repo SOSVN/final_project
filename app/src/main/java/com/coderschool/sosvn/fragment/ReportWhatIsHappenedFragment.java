@@ -13,8 +13,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static android.R.attr.value;
-
 public class ReportWhatIsHappenedFragment extends Fragment {
 
     private final int BURN = R.color.burn;

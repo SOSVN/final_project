@@ -1,12 +1,9 @@
 package com.coderschool.sosvn.fragment;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +17,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
@@ -60,7 +55,9 @@ public class OTPVerificationFragment extends Fragment {
 
     private int curPos = 0;
 
-    FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    UserManager userManager = UserManager.getInstance();
+    FirebaseAuth mAuth = userManager.getAuth();
+
     PhoneAuthProvider.ForceResendingToken resendToken;
     private String mPhoneNumber;
     private String mVerificationId;
@@ -85,8 +82,6 @@ public class OTPVerificationFragment extends Fragment {
         mResendToken = bundle.getParcelable("ResendToken");
         mVerificationId = bundle.getString("VerificationId");
         mPhoneNumber = bundle.getString("phoneNumber");
-
-
     }
 
     @OnClick({R.id.fl_submit_code})
@@ -98,13 +93,13 @@ public class OTPVerificationFragment extends Fragment {
                 + tvFifthCode.getText().toString()
                 + tvSixthCode.getText().toString();
         if (verifyCodeStr != "") {
-            verifyPhoneNumberWithCode(mVerificationId,verifyCodeStr);
+            verifyPhoneNumberWithCode(mVerificationId, verifyCodeStr);
         }
-        if (verifyCodeStr != "111111") {
-            Intent intent = new Intent(getContext(), UserProfileActivity.class);
-            startActivity(intent);
-            getActivity().finish();
-        }
+//        if (verifyCodeStr != "111111") {
+//            Intent intent = new Intent(getContext(), UserProfileActivity.class);
+//            startActivity(intent);
+//            getActivity().finish();
+//        }
     }
 
     private void verifyPhoneNumberWithCode(String verificationId, String code) {
@@ -113,20 +108,21 @@ public class OTPVerificationFragment extends Fragment {
         // [END verify_with_code]
         signInWithPhoneAuthCredential(credential);
     }
+
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            FirebaseUser user = task.getResult().getUser();
+                            userManager.setUser(task.getResult().getUser());
                             Intent intent = new Intent(getContext(), UserProfileActivity.class);
                             startActivity(intent);
                             getActivity().finish();
 
                         } else {
                             // Sign in failed, display a message and update the UI
-                            Toast.makeText(getActivity(),"Failed to Verify",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Failed to Verify", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

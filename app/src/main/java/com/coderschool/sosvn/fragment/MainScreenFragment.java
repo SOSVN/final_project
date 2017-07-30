@@ -11,7 +11,6 @@ import com.coderschool.sosvn.R;
 import com.coderschool.sosvn.activity.ReportActivity;
 import com.coderschool.sosvn.activity.ShowHospitalActivity;
 import com.coderschool.sosvn.activity.UserProfileActivity;
-import com.coderschool.sosvn.activity.VerificationActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;

@@ -36,7 +36,7 @@ public class DecodeBitmapTask extends AsyncTask<Void, Void, Bitmap> {
     protected Bitmap doInBackground(Void... voids) {
         Bitmap cachedBitmap = cache.getBitmapFromBgMemCache(bitmapResId);
         if (cachedBitmap != null) {
-           return cachedBitmap;
+            return cachedBitmap;
         }
 
         final BitmapFactory.Options options = new BitmapFactory.Options();
@@ -52,8 +52,7 @@ public class DecodeBitmapTask extends AsyncTask<Void, Void, Bitmap> {
             int halfHeight = height / 2;
 
             while ((halfHeight / inSampleSize) >= reqHeight && (halfWidth / inSampleSize) >= reqWidth
-                    && !isCancelled() )
-            {
+                    && !isCancelled()) {
                 inSampleSize *= 2;
             }
         }

@@ -4,17 +4,19 @@
     android:layout_height="wrap_content"
     android:background="?android:attr/selectableItemBackground"
     android:padding="8dp">
+
     <ImageView
         android:id="@+id/iv_blood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_blood"/>
+        android:src="@drawable/ic_blood" />
+
     <TextView
-        android:id="@+id/tv_blood"
+        android:id="@+id/tv_bloodType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/iv_blood"
         android:text="A"
         android:layout_marginLeft="16dp"
-        android:layout_centerVertical="true"/>
+        android:layout_centerVertical="true" />
 </RelativeLayout>

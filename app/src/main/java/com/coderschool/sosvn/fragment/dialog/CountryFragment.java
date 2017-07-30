@@ -3,15 +3,12 @@ package com.coderschool.sosvn.fragment.dialog;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,14 +30,15 @@ import butterknife.OnClick;
  * Created by Admin on 7/26/2017.
  */
 
-public class CountryFragment  extends DialogFragment implements UserManager.Callback<Country>{
+public class CountryFragment extends DialogFragment implements UserManager.Callback<Country> {
 
     @BindView(R.id.rv_countries)
     RecyclerView rvCountries;
 
     CountryAdapter countryAdapter;
     List<Country> mCountryList;
-    UserManager userManager;
+    UserManager userManager = UserManager.getInstance();
+
     public static CountryFragment newInstance() {
         Bundle args = new Bundle();
         CountryFragment fragment = new CountryFragment();
@@ -59,7 +57,7 @@ public class CountryFragment  extends DialogFragment implements UserManager.Call
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        Dialog dialog =  super.onCreateDialog(savedInstanceState);
+        Dialog dialog = super.onCreateDialog(savedInstanceState);
         dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         return dialog;
     }
@@ -68,8 +66,8 @@ public class CountryFragment  extends DialogFragment implements UserManager.Call
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_list_country,container,false);
-        ButterKnife.bind(this,view);
+        View view = inflater.inflate(R.layout.fragment_list_country, container, false);
+        ButterKnife.bind(this, view);
         return view;
     }
 
@@ -77,11 +75,12 @@ public class CountryFragment  extends DialogFragment implements UserManager.Call
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mCountryList = new ArrayList<>();
+        mCountryList = userManager.getAllCountries();
         countryAdapter = new CountryAdapter(getContext());
-        userManager = UserManager.getInstance();
+        countryAdapter.setData(mCountryList);
         userManager.setCallback(this);
         userManager.getAllCountries();
-        rvCountries.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
+        rvCountries.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         rvCountries.setHasFixedSize(true);
         rvCountries.setAdapter(countryAdapter);
         countryAdapter.setListener(new CountryAdapter.Listener() {
@@ -89,9 +88,9 @@ public class CountryFragment  extends DialogFragment implements UserManager.Call
             public void onItemClick(Country country) {
                 Intent i = new Intent();
                 Bundle bundle = new Bundle();
-                bundle.putParcelable("country",country);
-                i.putExtra("item",bundle);
-                getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK,i);
+                bundle.putParcelable("country", country);
+                i.putExtra("item", bundle);
+                getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, i);
                 dismiss();
             }
         });
@@ -99,14 +98,14 @@ public class CountryFragment  extends DialogFragment implements UserManager.Call
 
     @Override
     public void onSuccess(List<Country> list) {
-        mCountryList = list;
-        countryAdapter.setData(mCountryList);
+
     }
 
     @Override
-    public void onFail(boolean check) {
+    public void onComplete(boolean check) {
 
     }
+
 
     @OnClick(R.id.btnClose)
     public void onClose() {

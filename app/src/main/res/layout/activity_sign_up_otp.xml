@@ -89,6 +89,7 @@
             android:paddingRight="30dp"
             android:paddingTop="20dp" />
     </RelativeLayout>
+
     <FrameLayout
         android:id="@+id/fl_sign_up_otp"
         android:layout_width="match_parent"

@@ -20,9 +20,9 @@
 
     <color name="text_idle">#6e6b6b</color>
     <color name="text_highlighted">#ffffff</color>
-    <color name="divider" >#d9d7d7</color>
+    <color name="divider">#d9d7d7</color>
     <color name="color_title">#2880fa</color>
-    
+
     <color name="black">@android:color/black</color>
     <color name="white">@android:color/white</color>
     <color name="black_transparent">#14000000</color>
@@ -33,5 +33,5 @@
     <color name="grey_300">#e0e0e0</color>
     <color name="grey_200">#EEEEEE</color>
     <color name="bg">#757575</color>
-    
+
 </resources>

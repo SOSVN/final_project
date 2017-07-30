@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:fadeScrollbars="true"
     android:scrollbarSize="1dp">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,38 +14,41 @@
         android:padding="@dimen/activity_vertical_margin"
         android:textColor="@color/color_title"
         android:layout_margin="@dimen/cardview_default_elevation"
-        android:gravity="center"
-        />
+        android:gravity="center" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/color_title"/>
+        android:background="@color/color_title" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:orientation="vertical"
-           android:layout_height="wrap_content">
-           <android.support.v7.widget.RecyclerView
-               android:id="@+id/rv_countries"
-               android:layout_margin="@dimen/nav_header_vertical_spacing"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:scrollbars="vertical"
-               android:fadeScrollbars="true"
-               android:scrollbarSize="2dp"/>
-           <Button
-               android:id="@+id/btnClose"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="@string/cancel"
-               android:background="#0000"
-               android:textSize="16sp"
-               android:textColor="@color/color_title"
-               android:layout_gravity="right|end"/>
-       </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_countries"
+                android:layout_margin="@dimen/nav_header_vertical_spacing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+                android:fadeScrollbars="true"
+                android:scrollbarSize="2dp" />
+
+            <Button
+                android:id="@+id/btnClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:background="#0000"
+                android:textSize="16sp"
+                android:textColor="@color/color_title"
+                android:layout_gravity="right|end" />
+        </LinearLayout>
     </ScrollView>
 
 </LinearLayout>

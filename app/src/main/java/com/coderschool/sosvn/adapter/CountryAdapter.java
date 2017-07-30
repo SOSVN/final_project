@@ -2,15 +2,12 @@ package com.coderschool.sosvn.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.coderschool.sosvn.R;
 import com.coderschool.sosvn.object.Country;
 
@@ -20,7 +17,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class CountryAdapter  extends RecyclerView.Adapter<CountryAdapter.MyHolder>{
+public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.MyHolder> {
 
     private Context mContext;
     private List<Country> mCountryList;
@@ -52,12 +49,8 @@ public class CountryAdapter  extends RecyclerView.Adapter<CountryAdapter.MyHolde
     public void onBindViewHolder(MyHolder holder, int position) {
         final Country country = mCountryList.get(position);
 
-        Glide.with(mContext)
-                .load(country.getUrlFlag())
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(holder.flag);
-
-        holder.nameCountry.setText(country.getName() + " ("+country.getPhoneCode()+")");
+        holder.flag.setImageResource(country.getIdFlag());
+        holder.nameCountry.setText(country.getName() + " (" + country.getPhoneCode() + ")");
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,7 +73,7 @@ public class CountryAdapter  extends RecyclerView.Adapter<CountryAdapter.MyHolde
 
         public MyHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this,itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
 

@@ -54,18 +54,25 @@
     <string name="report_mess">Generate a bilingual report to pass the language barrier on the street.</string>
 
     <string-array name="gender_array">       
-        <item>Male</item>               
-        <item>Female</item>           
+        <item>Male</item>
+               
+        <item>Female</item>
+           
     </string-array>
 
     <string-array name="blood_array">       
-        <item>A-</item>               
+        <item>A-</item>
+               
         <item>A+</item>
-        <item>B-</item>               
+        <item>B-</item>
+               
         <item>B+</item>
         <item>AB-</item>
-        <item>AB+</item>         
-        <item>0-</item>  
-        <item>0+</item>   
+        <item>AB+</item>
+               
+        <item>O-</item>
+         
+        <item>O+</item>
+         
     </string-array>
 </resources>

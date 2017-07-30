@@ -2,9 +2,6 @@ package com.coderschool.sosvn.fragment;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
@@ -12,24 +9,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.coderschool.sosvn.R;
 import com.coderschool.sosvn.card.SliderAdapter;
 import com.coderschool.sosvn.factory.TextViewFactory;
-import com.coderschool.sosvn.util.BlurImage;
-import com.coderschool.sosvn.util.ConvertImageToBitmap;
 import com.ramotion.cardslider.CardSliderLayoutManager;
 import com.ramotion.cardslider.CardSnapHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import jp.wasabeef.glide.transformations.BlurTransformation;
-
-import static com.coderschool.sosvn.R.id.imageView;
 
 public class ContentMainFragment extends Fragment {
 

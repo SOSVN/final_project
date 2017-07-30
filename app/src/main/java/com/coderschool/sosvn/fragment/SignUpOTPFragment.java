@@ -17,8 +17,6 @@ import com.coderschool.sosvn.fragment.dialog.CountryFragment;
 import com.coderschool.sosvn.manager.UserManager;
 import com.coderschool.sosvn.object.Country;
 import com.google.firebase.FirebaseException;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
@@ -26,7 +24,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SignUpOTPFragment extends Fragment  {
+public class SignUpOTPFragment extends Fragment {
 
     private int REQUEST_CODE = 20;
 
@@ -37,10 +35,9 @@ public class SignUpOTPFragment extends Fragment  {
 
 
     Country country;
-//    UserManager userManager = UserManager.getInstance();
+    UserManager userManager = UserManager.getInstance();
     private String mPhoneNumber;
-    private FirebaseUser mFirebaseUser;
-    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,8 +65,7 @@ public class SignUpOTPFragment extends Fragment  {
             }
             if (country != null) {
                 mPhoneNumber = country.getPhoneCode() + mPhoneNumber;
-                UserManager userManager = UserManager.getInstance();
-                userManager.sendVertificationCode(getActivity(),mCallback,mPhoneNumber);
+                userManager.sendVertificationCode(getActivity(), mCallback, mPhoneNumber);
             }
 
         } else {
@@ -81,8 +77,8 @@ public class SignUpOTPFragment extends Fragment  {
     @OnClick({R.id.fl_pick_contry, R.id.ipt_pick_contry, R.id.iv_drop_down})
     public void showEditDialog() {
         CountryFragment countryFragment = CountryFragment.newInstance();
-        countryFragment.setTargetFragment(this,REQUEST_CODE);
-        countryFragment.show(getFragmentManager(),"");
+        countryFragment.setTargetFragment(this, REQUEST_CODE);
+        countryFragment.show(getFragmentManager(), "");
 
     }
 
@@ -91,42 +87,41 @@ public class SignUpOTPFragment extends Fragment  {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE) {
             country = data.getBundleExtra("item").getParcelable("country");
-            iptCountry.setText(country.getName() + "("+country.getPhoneCode()+")");
+            iptCountry.setText(country.getName() + "(" + country.getPhoneCode() + ")");
         }
 
     }
 
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallback =
             new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-        @Override
-        public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
-            Log.d("KKK",phoneAuthCredential.toString());
-        }
+                @Override
+                public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
+                    Log.d("KKK", phoneAuthCredential.toString());
+                }
 
-        @Override
-        public void onVerificationFailed(FirebaseException e) {
-            Log.d("KKK",e.toString());
-        }
+                @Override
+                public void onVerificationFailed(FirebaseException e) {
+                    Log.d("KKK", e.toString());
+                }
 
-        @Override
-        public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                @Override
+                public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
 
-            Intent intent = new Intent(getContext(), VerificationActivity.class);
-            Bundle bundle = new Bundle();
-            bundle.putParcelable("ResendToken",forceResendingToken);
-            bundle.putString("VerificationId",s);
-            bundle.putString("phoneNumber",mPhoneNumber);
-            intent.putExtra("item",bundle);
-            startActivity(intent);
-            getActivity().finish();
-        }
-    };
+                    Intent intent = new Intent(getContext(), VerificationActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putParcelable("ResendToken", forceResendingToken);
+                    bundle.putString("VerificationId", s);
+                    bundle.putString("phoneNumber", mPhoneNumber);
+                    intent.putExtra("item", bundle);
+                    startActivity(intent);
+                    getActivity().finish();
+                }
+            };
 
     @Override
     public void onStart() {
         super.onStart();
-        mFirebaseUser = mAuth.getCurrentUser();
-        if (mFirebaseUser != null) {
+        if (userManager.getUser() != null) {
             startActivity(new Intent(getActivity(), MainActivity.class));
         }
     }

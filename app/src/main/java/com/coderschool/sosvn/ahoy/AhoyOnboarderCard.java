@@ -1,6 +1,5 @@
 package com.coderschool.sosvn.ahoy;
 
-import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;

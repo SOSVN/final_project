@@ -6,21 +6,16 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.coderschool.sosvn.R;
-import com.coderschool.sosvn.util.DrawBitmap;
-
-import java.io.ByteArrayOutputStream;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -51,9 +46,11 @@ public class ReportWhereItIsFragment extends Fragment {
 
         ivPartOfBody.setOnTouchListener(new View.OnTouchListener() {
             public boolean onTouch(View view, MotionEvent event) {
-                float posX = event.getX();
-                float posY = event.getY();
-                drawCircleAt(posX, posY);
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    float posX = event.getX();
+                    float posY = event.getY();
+                    drawCircleAt(posX, posY);
+                }
                 return false;
             }
         });

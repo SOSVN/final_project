@@ -1,19 +1,11 @@
 package com.coderschool.sosvn.util;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.util.AttributeSet;
-import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 public class ViewCustom extends FrameLayout {
     private float radius;

@@ -74,6 +74,7 @@
                     android:alpha="0.6"
                     android:background="@color/idle" />
             </com.coderschool.sosvn.util.ViewCustom>
+
             <TextView
                 android:id="@+id/tv_fracture"
                 android:layout_width="match_parent"
@@ -83,6 +84,7 @@
                 android:textColor="#6e6b6b"
                 android:textSize="@dimen/text_report_size" />
         </FrameLayout>
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -101,6 +103,7 @@
                     android:alpha="0.6"
                     android:background="@color/idle" />
             </com.coderschool.sosvn.util.ViewCustom>
+
             <TextView
                 android:id="@+id/tv_bleed"
                 android:layout_width="match_parent"

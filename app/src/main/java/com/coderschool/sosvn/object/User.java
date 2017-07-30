@@ -4,16 +4,19 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by Admin on 7/26/2017.
  */
 
-public class User extends RealmObject implements Parcelable{
+public class User extends RealmObject implements Parcelable {
 
+    @PrimaryKey
     private String id;
+
     private String birthday;
-    private String bloodID;
+    private String bloodType;
     private String gender;
     private String ice;
     private String insuranceNunmber;
@@ -23,12 +26,14 @@ public class User extends RealmObject implements Parcelable{
     private String urlAvatar;
     private String phoneNumber;
     private String password;
-    public User() {}
 
-    protected User(Parcel in) {
+    public User() {
+    }
+
+    public User(Parcel in) {
         id = in.readString();
         birthday = in.readString();
-        bloodID = in.readString();
+        bloodType = in.readString();
         gender = in.readString();
         ice = in.readString();
         insuranceNunmber = in.readString();
@@ -39,6 +44,7 @@ public class User extends RealmObject implements Parcelable{
         phoneNumber = in.readString();
         password = in.readString();
     }
+
 
     public static final Creator<User> CREATOR = new Creator<User>() {
         @Override
@@ -61,7 +67,7 @@ public class User extends RealmObject implements Parcelable{
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(id);
         parcel.writeString(birthday);
-        parcel.writeString(bloodID);
+        parcel.writeString(bloodType);
         parcel.writeString(gender);
         parcel.writeString(ice);
         parcel.writeString(insuranceNunmber);
@@ -81,8 +87,8 @@ public class User extends RealmObject implements Parcelable{
         this.birthday = birthday;
     }
 
-    public void setBloodID(String bloodID) {
-        this.bloodID = bloodID;
+    public void setBloodType(String bloodType) {
+        this.bloodType = bloodType;
     }
 
     public void setGender(String gender) {
@@ -137,8 +143,8 @@ public class User extends RealmObject implements Parcelable{
         return birthday;
     }
 
-    public String getBloodID() {
-        return bloodID;
+    public String getBloodType() {
+        return bloodType;
     }
 
     public String getGender() {

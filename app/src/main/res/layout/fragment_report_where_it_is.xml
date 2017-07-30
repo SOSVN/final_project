@@ -37,6 +37,7 @@
                 android:text="@string/left"
                 android:textColor="#6e6b6b"
                 android:textSize="@dimen/text_report_size" />
+
             <ImageView
 
                 android:id="@+id/iv_part_of_body"

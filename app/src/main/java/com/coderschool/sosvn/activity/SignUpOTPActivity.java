@@ -1,13 +1,9 @@
 package com.coderschool.sosvn.activity;
 
-import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 import com.coderschool.sosvn.R;
 import com.coderschool.sosvn.ahoy.AhoyOnboarderActivity;
@@ -26,6 +22,7 @@ public class SignUpOTPActivity extends AhoyOnboarderActivity {
     private final int FIND_MESS = R.string.find_mess;
     private final int CALL_MESS = R.string.call_mess;
     private final int REPORT_MESS = R.string.report_mess;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

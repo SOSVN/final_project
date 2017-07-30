@@ -22,7 +22,7 @@ public class CardsUpdater extends DefaultViewUpdater {
 
     @Override
     protected void onUpdateViewAlpha(@NonNull View view, float alpha) {
-        final CardView card = ((CardView)view);
+        final CardView card = ((CardView) view);
         final View alphaView = card.getChildAt(1);
         final View imageView = card.getChildAt(0);
 
@@ -44,7 +44,7 @@ public class CardsUpdater extends DefaultViewUpdater {
     @Override
     protected void onUpdateViewZ(@NonNull View view, float z) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            ((CardView)view).setCardElevation(Math.max(0, z));
+            ((CardView) view).setCardElevation(Math.max(0, z));
         } else {
             super.onUpdateViewZ(view, z);
         }

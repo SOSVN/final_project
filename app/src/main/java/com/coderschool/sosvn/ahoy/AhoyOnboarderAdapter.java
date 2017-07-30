@@ -8,7 +8,6 @@ import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.ViewGroup;
 
-
 import com.coderschool.sosvn.ahoy.utils.ShadowTransformer;
 
 import java.util.ArrayList;

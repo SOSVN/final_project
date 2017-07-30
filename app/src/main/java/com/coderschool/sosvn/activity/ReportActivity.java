@@ -4,18 +4,15 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.coderschool.sosvn.R;
 import com.coderschool.sosvn.adapter.pager.ReportPagerAdapter;
 import com.coderschool.sosvn.fragment.ReportSeverityFragment;
-import com.coderschool.sosvn.fragment.ReportSumaryFragment;
 import com.coderschool.sosvn.fragment.ReportWhatIsHappenedFragment;
 import com.coderschool.sosvn.fragment.ReportWhereItIsFragment;
 import com.coderschool.sosvn.manager.ReportManager;
-import com.coderschool.sosvn.object.Report;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -63,7 +60,7 @@ public class ReportActivity extends AppCompatActivity {
 
             public void onPageSelected(int position) {
                 // Check if this is the page you want.
-                if(currentStep < position)
+                if (currentStep < position)
                     changeNextView();
                 else if (currentStep > position)
                     changePrevView();
