@@ -136,20 +136,21 @@ public abstract class AhoyOnboarderActivity extends AppCompatActivity implements
         circleIndicatorView.setCurrentPage(position);
 
         if (position == lastPagePosition) {
-            fadeOut(circleIndicatorView);
-            showFinish();
-            fadeOut(ivNext);
-            fadeIn(ivPrev);
+//            fadeOut(circleIndicatorView);
+//            showFinish();
+//            fadeOut(ivNext);
+//            fadeIn(ivPrev);
+            fadeIn(circleIndicatorView);
         } else if (position == firstPagePosition) {
-            fadeOut(ivPrev);
-            fadeIn(ivNext);
+//            fadeOut(ivPrev);
+//            fadeIn(ivNext);
             hideFinish();
             fadeIn(circleIndicatorView);
         } else {
             fadeIn(circleIndicatorView);
             hideFinish();
-            fadeIn(ivPrev);
-            fadeIn(ivNext);
+//            fadeIn(ivPrev);
+//            fadeIn(ivNext);
         }
 
         if (solidBackground && (pages.size() == colorList.size())) {
