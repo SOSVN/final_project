@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.coderschool.sosvn.R;
+import com.coderschool.sosvn.activity.MainActivity;
 import com.coderschool.sosvn.activity.VerificationActivity;
 import com.coderschool.sosvn.fragment.dialog.CountryFragment;
 import com.coderschool.sosvn.manager.UserManager;
@@ -36,7 +37,7 @@ public class SignUpOTPFragment extends Fragment  {
 
 
     Country country;
-    UserManager userManager = UserManager.getInstance();
+//    UserManager userManager = UserManager.getInstance();
     private String mPhoneNumber;
     private FirebaseUser mFirebaseUser;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -67,6 +68,7 @@ public class SignUpOTPFragment extends Fragment  {
             }
             if (country != null) {
                 mPhoneNumber = country.getPhoneCode() + mPhoneNumber;
+                UserManager userManager = UserManager.getInstance();
                 userManager.sendVertificationCode(getActivity(),mCallback,mPhoneNumber);
             }
 
@@ -123,9 +125,9 @@ public class SignUpOTPFragment extends Fragment  {
     @Override
     public void onStart() {
         super.onStart();
-   //     mFirebaseUser = mAuth.getCurrentUser();
-//        if (mFirebaseUser != null) {
-//            startActivity(new Intent(getActivity(), MainActivity.class));
-//        }
+        mFirebaseUser = mAuth.getCurrentUser();
+        if (mFirebaseUser != null) {
+            startActivity(new Intent(getActivity(), MainActivity.class));
+        }
     }
 }

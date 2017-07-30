@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "926545232663-gj2jpunk884a03f11ro2n1dluvcq4s5f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.coderschool.sosvn",
+            "certificate_hash": "9053d73775c31bedd9635e1e1a2a05c0cef82882"
+          }
+        },
+        {
           "client_id": "926545232663-6rm651llogjdqgp8rmadl825rv6g01qh.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

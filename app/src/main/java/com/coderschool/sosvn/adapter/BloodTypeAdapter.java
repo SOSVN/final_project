@@ -55,7 +55,7 @@ public class BloodTypeAdapter  extends RecyclerView.Adapter<BloodTypeAdapter.MyV
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         final Blood blood = mBloodList.get(position);
-        holder.tvBloodType.setText(blood.getBloodType());
+        holder.tvBlood.setText(blood.getBloodType());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,8 +71,8 @@ public class BloodTypeAdapter  extends RecyclerView.Adapter<BloodTypeAdapter.MyV
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.tv_bloodType)
-        TextView tvBloodType;
+        @BindView(R.id.tv_blood)
+        TextView tvBlood;
 
         public MyViewHolder(View itemView) {
             super(itemView);
